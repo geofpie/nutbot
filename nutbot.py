@@ -35,10 +35,9 @@ async def get_form_text():
 
         await page.goto(URL, timeout=30000)
 
-        # Optional: wait for specific text or element
         try:
             await page.wait_for_selector("body", timeout=10000)
-            await asyncio.sleep(2)  # Let JS fully render
+            await asyncio.sleep(2)
         except:
             print("⚠️ Page body not fully loaded.")
 
