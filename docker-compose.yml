@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  nutbot:
+    build: .
+    container_name: nutbot
+    env_file: .env
+    volumes:
+      - .:/app
+    restart: "no"
