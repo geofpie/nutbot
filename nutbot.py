@@ -75,7 +75,7 @@ async def send_telegram_alert(message: str):
 async def main():
     raw_text = await get_form_text()
     current_text = clean_text(raw_text)    
-    print("\n--- Extracted Page Text ---\n")
+    print(f"\n[{timestamp}]--- Extracted Page Text ---\n")
     print(current_text)
     print("\n---------------------------\n")
 
@@ -89,13 +89,13 @@ async def main():
 
         message = (
             f"⚠️ The form page has changed.\n\n"
-            f"Either the status changed or the page content was updated.\n"
+            f"Either the status changed or the page content was updated.\n\n"
             f"📅 Checked: {timestamp}\n"
             f"🔗 {URL}"
         )
         await send_telegram_alert(message)
     else:
-        print("✅ No change in form content. No message sent.")
+        print(f"[{timestamp}] ✅ No change in form content. No message sent.")
         
 # === RUN ===
 
