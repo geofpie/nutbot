@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # === CONFIG ===
-URL = "Insert URL To Monitor Here"
+URL = os.getenv("MONITOR_URL")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 HASH_FILE = "status_hash.txt"
