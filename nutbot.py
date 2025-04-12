@@ -74,14 +74,15 @@ async def send_telegram_alert(message: str):
 
 async def main():
     raw_text = await get_form_text()
-    current_text = clean_text(raw_text)    
+    current_text = clean_text(raw_text)   
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+ 
     print(f"\n[{timestamp}]--- Extracted Page Text ---\n")
     print(current_text)
     print("\n---------------------------\n")
 
     current_hash = get_text_hash(current_text)
     previous_hash = load_last_hash()
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     if current_hash != previous_hash:
         print("🔔 Change detected in form status.")
