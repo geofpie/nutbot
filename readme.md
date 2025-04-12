@@ -32,7 +32,7 @@ nutbot/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/yourusername/nutbot.git
+git clone https://github.com/geofpie/nutbot
 cd nutbot
 ```
 
