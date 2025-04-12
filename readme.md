@@ -24,10 +24,38 @@ nutbot/
 ├── Dockerfile             # Docker container config
 ├── requirements.txt       # Python dependencies
 ├── .env.example           # Template for secrets
+├── setup.sh               # Interactive installer script
 ├── cron.log               # Optional: captures logs from each run
 ```
 
-## ⚙️ Setup
+## ⚙️ Automated Setup
+
+### 1. Clone and Run the Installer Script
+
+```bash
+wget https://raw.githubusercontent.com/geofpie/nutbot/main/setup.sh
+chmod +x setup.sh
+./setup.sh
+```
+
+This script will:
+- Clone the GitHub repo
+- Prompt you to enter the form URL, Telegram Bot Token, and Chat ID
+- Create a `.env` file for configuration
+- Build the Docker image
+- Run the bot once to verify
+- Install a cron job that runs every 4 hours
+
+### 2. Manual `.env` Setup (Optional)
+
+If you're setting things up manually, your `.env` should look like:
+
+```env
+MONITOR_URL=your_website_url
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_CHAT_ID=your_chat_id
+```
+## ⚙️ Manual Setup
 
 ### 1. Clone the Repo
 
@@ -45,6 +73,7 @@ cp .env.example .env
 ```
 
 Edit `.env` and insert your:
+- `MONITOR_URL`
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
 
