@@ -23,9 +23,9 @@ fi
 # === 2. Prompt for .env creation ===
 if [ ! -f .env ]; then
     echo "⚙️ Setting up your .env file..."
-    read -p "🔍 Enter the URL to monitor: " MONITOR_URL
-    read -p "🤖 Enter your Telegram Bot Token: " TELEGRAM_BOT_TOKEN
-    read -p "💬 Enter your Telegram Chat ID: " TELEGRAM_CHAT_ID
+    read -r -p "🔍 Enter the URL to monitor: " MONITOR_URL </dev/tty
+    read -r -p "🤖 Enter your Telegram Bot Token: " TELEGRAM_BOT_TOKEN </dev/tty
+    read -r -p "💬 Enter your Telegram Chat ID: " TELEGRAM_CHAT_ID </dev/tty
 
     cat <<EOF > .env
 MONITOR_URL=$MONITOR_URL
